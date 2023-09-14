@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/wrap_widget.dart';
+import 'package:flutter_example/text_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: const Scaffold(
-          body: WrapWidget(),
+          body: Textbuttonwidgets(),
         ));
   }
 }
