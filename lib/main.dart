@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'container_widgets.dart';
+import 'package:flutter_example/wrap_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,24 +13,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          appBarTheme: AppBarTheme(color: Colors.indigo),
+          appBarTheme: const AppBarTheme(
+              color: Colors.indigo,
+              titleTextStyle: TextStyle(
+                  letterSpacing: 5, fontWeight: FontWeight.bold, fontSize: 25)),
           brightness: Brightness.dark,
           textTheme: const TextTheme(
-              titleMedium: TextStyle(fontSize: 20),
-              titleSmall: TextStyle(fontSize: 15),
-              titleLarge: TextStyle(
-                fontSize: 25.0,
-              ),
-              bodySmall: TextStyle(),
-              bodyLarge: TextStyle(color: Colors.indigo, fontSize: 22),
-              bodyMedium: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18,
-                  letterSpacing: 2,
-                  fontWeight: FontWeight.bold)),
+            titleLarge: TextStyle(
+              fontSize: 25.0,
+            ),
+            titleMedium: TextStyle(fontSize: 20),
+            titleSmall: TextStyle(fontSize: 15),
+            bodyLarge: TextStyle(color: Colors.blue, fontSize: 22),
+            bodyMedium: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                letterSpacing: 2,
+                fontWeight: FontWeight.bold),
+            bodySmall: TextStyle(),
+          ),
         ),
         home: const Scaffold(
-          body: ContainerWidgets(),
+          body: WrapWidget(),
         ));
   }
 }
