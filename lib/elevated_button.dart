@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Elevatedwidgets extends StatefulWidget {
   const Elevatedwidgets({super.key});
@@ -9,6 +10,12 @@ class Elevatedwidgets extends StatefulWidget {
 
 class _ElevatedwidgetsState extends State<Elevatedwidgets> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("elevated button")),
@@ -17,7 +24,10 @@ class _ElevatedwidgetsState extends State<Elevatedwidgets> {
           Center(
               child: ElevatedButton(
                   onPressed: () {
-                    print("elevated button clicked");
+                    Fluttertoast.showToast(
+                      msg: "This is elevated button msg",
+                    );
+                    setState(() {});
                   },
                   child: Text(
                     "click",
