@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_example/text_button.dart';
+
+import 'elevated_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,28 +14,44 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          appBarTheme: const AppBarTheme(
-              color: Colors.indigo,
-              titleTextStyle: TextStyle(
-                  letterSpacing: 5, fontWeight: FontWeight.bold, fontSize: 25)),
-          brightness: Brightness.dark,
-          textTheme: const TextTheme(
-            titleLarge: TextStyle(
-              fontSize: 25.0,
+            primaryColor: Colors.indigo,
+            useMaterial3: true,
+            //////////////////////////////////
+            appBarTheme: const AppBarTheme(
+                color: Colors.indigo,
+                titleTextStyle: TextStyle(
+                    letterSpacing: 5,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25)),
+            //////////////////////////////
+            brightness: Brightness.dark,
+            ////////////////////////////
+            textTheme: const TextTheme(
+              titleLarge: TextStyle(color: Colors.red, fontSize: 25.0),
+              titleMedium: TextStyle(color: Colors.orange, fontSize: 20),
+              titleSmall: TextStyle(color: Colors.blue, fontSize: 15),
+              bodyLarge: TextStyle(color: Colors.red, fontSize: 25.0),
+              bodyMedium: TextStyle(color: Colors.orange, fontSize: 20),
+              bodySmall: TextStyle(color: Colors.blue, fontSize: 15),
             ),
-            titleMedium: TextStyle(fontSize: 20),
-            titleSmall: TextStyle(fontSize: 15),
-            bodyLarge: TextStyle(color: Colors.blue, fontSize: 22),
-            bodyMedium: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                letterSpacing: 2,
-                fontWeight: FontWeight.bold),
-            bodySmall: TextStyle(),
-          ),
-        ),
+            ////////////////////////////////
+
+            elevatedButtonTheme: const ElevatedButtonThemeData(
+                style: ButtonStyle(
+                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(10),
+                            bottomLeft: Radius.circular(10)))),
+                    shadowColor:
+                        MaterialStatePropertyAll(Colors.deepPurpleAccent),
+                    backgroundColor: MaterialStatePropertyAll(Colors.white)))
+            /////////////////////////
+
+            ),
+
+        //////////////////////////////
         home: const Scaffold(
-          body: Textbuttonwidgets(),
+          body: Elevatedwidgets(),
         ));
   }
 }
