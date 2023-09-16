@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'elevated_button.dart';
+import 'drawer_widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,25 +16,15 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         builder: FToastBuilder(),
         theme: ThemeData(
-          primaryColor: Colors.indigo,
+          primaryColor: Colors.blueGrey,
           useMaterial3: true,
           //////////////////////////////////
           appBarTheme: const AppBarTheme(
-              color: Colors.indigo,
-              titleTextStyle: TextStyle(
-                  letterSpacing: 5, fontWeight: FontWeight.bold, fontSize: 25)),
-          //////////////////////////////
-          brightness: Brightness.light,
-          ////////////////////////////
-          textTheme: const TextTheme(
-            titleLarge: TextStyle(color: Colors.red, fontSize: 25.0),
-            titleMedium: TextStyle(color: Colors.orange, fontSize: 20),
-            titleSmall: TextStyle(color: Colors.blue, fontSize: 15),
-            bodyLarge: TextStyle(color: Colors.red, fontSize: 25.0),
-            bodyMedium: TextStyle(color: Colors.orange, fontSize: 20),
-            bodySmall: TextStyle(color: Colors.blue, fontSize: 15),
+            color: Colors.blueGrey,
           ),
-          ////////////////////////////////
+          //////////////////////////////
+          brightness: Brightness.dark,
+          /////////////////////////////
 
           elevatedButtonTheme: const ElevatedButtonThemeData(
             style: ButtonStyle(
@@ -51,7 +41,7 @@ class MyApp extends StatelessWidget {
         ),
         //////////////////////////////
         home: const Scaffold(
-          body: Elevatedwidgets(),
+          body: Drawerwidgets(),
         ));
   }
 }
