@@ -8,7 +8,7 @@ class Listviewbuilder extends StatefulWidget {
 }
 
 class _ListviewbuilderState extends State<Listviewbuilder> {
-  Map student_id_name = {
+  Map studentIdName = {
     '1': 'hari',
     '2': 'kavi',
     '3': 'mahesh',
@@ -26,25 +26,23 @@ class _ListviewbuilderState extends State<Listviewbuilder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("List View")),
+      appBar: AppBar(title: const Text("List View")),
       body: Center(
-        child: Container(
-            child: ListView.builder(
-          itemCount: student_id_name.length,
+        child: ListView.builder(
+          itemCount: studentIdName.length,
           itemBuilder: (BuildContext context, int index) {
-            String key = student_id_name.keys.elementAt(index);
+            String key = studentIdName.keys.elementAt(index);
 
             return Card(
               child: ListTile(
-                leading: CircleAvatar(child: Icon(Icons.person)),
-                title: Text("$key"),
-                subtitle:
-                    Text("${student_id_name[key].toString().toUpperCase()}"),
-                trailing: Icon(Icons.add),
-              ),
+                  leading: const CircleAvatar(child: Icon(Icons.person)),
+                  title: Text(key),
+                  subtitle: Text(studentIdName[key].toString().toUpperCase()),
+                  trailing: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.add))),
             );
           },
-        )),
+        ),
       ),
     );
   }

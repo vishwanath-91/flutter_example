@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'drawer_widgets.dart';
+import 'animated_text_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,11 +16,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         builder: FToastBuilder(),
         theme: ThemeData(
-          primaryColor: Colors.blueGrey,
+          primaryColor: Colors.black,
           useMaterial3: true,
           //////////////////////////////////
           appBarTheme: const AppBarTheme(
-            color: Colors.blueGrey,
+            color: Colors.black,
           ),
           //////////////////////////////
           brightness: Brightness.dark,
@@ -29,10 +29,7 @@ class MyApp extends StatelessWidget {
           elevatedButtonTheme: const ElevatedButtonThemeData(
             style: ButtonStyle(
                 shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(10),
-                  bottomLeft: Radius.circular(10),
-                ))),
+                    borderRadius: BorderRadius.all(Radius.circular(5)))),
                 shadowColor: MaterialStatePropertyAll(Colors.deepPurpleAccent),
                 backgroundColor: MaterialStatePropertyAll(Colors.white),
                 side:
@@ -41,7 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         //////////////////////////////
         home: const Scaffold(
-          body: Drawerwidgets(),
+          body: AnimatedWidgetxxx(),
         ));
   }
 }
