@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'animated_text_widget.dart';
+import 'Bottom_Navigation_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,14 +16,15 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         builder: FToastBuilder(),
         theme: ThemeData(
-          primaryColor: Colors.black,
           useMaterial3: true,
+          primaryColor: Colors.white,
           //////////////////////////////////
           appBarTheme: const AppBarTheme(
-            color: Colors.black,
+            color: Colors.blueGrey,
+            titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),
           ),
           //////////////////////////////
-          brightness: Brightness.dark,
+          brightness: Brightness.light,
           /////////////////////////////
 
           elevatedButtonTheme: const ElevatedButtonThemeData(
@@ -31,14 +32,14 @@ class MyApp extends StatelessWidget {
                 shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(5)))),
                 shadowColor: MaterialStatePropertyAll(Colors.deepPurpleAccent),
-                backgroundColor: MaterialStatePropertyAll(Colors.white),
+                backgroundColor: MaterialStatePropertyAll(Colors.blueGrey),
                 side:
                     MaterialStatePropertyAll(BorderSide(color: Colors.indigo))),
           ),
         ),
         //////////////////////////////
         home: const Scaffold(
-          body: AnimatedWidgetxxx(),
+          body: BottomNavigationBarExample(),
         ));
   }
 }

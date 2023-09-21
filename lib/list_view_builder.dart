@@ -26,7 +26,6 @@ class _ListviewbuilderState extends State<Listviewbuilder> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("List View")),
       body: Center(
         child: ListView.builder(
           itemCount: studentIdName.length,
